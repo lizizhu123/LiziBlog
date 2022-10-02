@@ -1,0 +1,43 @@
+server:
+  port: 8084
+spring:
+  mvc:
+    pathmatch:
+      # 配置策略
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:mysql://localhost:3306/mymusicapp?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: mymusicapp
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: org.apache.commons.dbcp2.BasicDataSource
+    dbcp2.connection-init-sqls: SET NAMES utf8mb4
+servlet:
+#  文件上传
+  multipart:
+    max-file-size: 2MB
+    max-request-size: 5Mb
+mybatis-plus:
+  configuration:
+#    日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+#      逻辑删除字段
+#      删除字段名为  delFlag  删除为1  未删除为0
+      logic-delete-field: delFlag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto
+knife4j:
+  enable: true
+oss:
+  accessKey: AAqsm8vftcv-wk_8dNAQpjv6Wwkxsqp7U_PWq-8U
+  secretKey: DjQxw2gjIYNuKmZ3u0z95rFkwYHsRZe0cW0GC8_I
+  bucket: lizizhublog
+  url: http://riv2ei4xr.bkt.clouddn.com/
+sms:
+  accessKeyId: LTAI5t7gnJmxYhFSjsobpzWx
+  secret: 6xhnGlv3B4deczYei4UxoJFbjrlhMt
+  TemplateCode: SMS_243940631
+  SignName: lizizhucloud

@@ -1,0 +1,11 @@
+com\lizi\controller\BlogLoginController.class
+com\lizi\controller\UserController.class
+com\lizi\controller\CommentController.class
+com\lizi\controller\UpLoadController.class
+com\lizi\controller\LinkController.class
+com\lizi\controller\ArticleController.class
+com\lizi\controller\CategoryController.class
+com\lizi\controller\MessageController.class
+com\lizi\LiZiBlogApplication.class
+com\lizi\filter\JwtAuthenticationTokenFilter.class
+com\lizi\config\SecurityConfig.class

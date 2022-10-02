@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lizi.mapper.ArticleMapper">
+    <resultMap type="com.lizi.domain.vo.HotArticleVo" id="articleResultMap">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="viewCount" column="view_count"/>
+    </resultMap>
+    <select id="hotArticle" resultMap="articleResultMap">
+        SELECT id,title,view_count
+        FROM sg_article
+        WHERE del_flag = 0 AND status = '0'
+        ORDER BY view_count DESC
+        limit 0,10
+    </select>
+    <select id="viewCount" resultType="Long" parameterType="Long">
+    SELECT sum(view_count) as total from sg_article where create_by=${id}
+    </select>
+</mapper>
